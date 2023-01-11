@@ -1,7 +1,10 @@
 set -e
 #export PATH=/home/qureai_support/bin:/home/qureai_support/.local/bin:$PATH
 
+echo "taking backups of cxr and apihub"
+
 cd /qureupdate/misc
+bash pgbackup.sh
 
 echo "changing yml and env files"
 
