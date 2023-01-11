@@ -3,7 +3,7 @@ set -e
 # for latest docker compose
 #export PATH=/home/qureai_support/bin:/home/qureai_support/.local/bin:$PATH
 
-cd /lol
+cd /qureupdate
 echo "Deployment started"
 
 #sudo aws ecr get-login --no-include-email --region=ap-south-1 | /bin/bash

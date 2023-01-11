@@ -2,7 +2,7 @@
 set -e
 #export PATH=/home/qureai_support/bin:/home/qureai_support/.local/bin:$PATH
 
-cd /lol
+cd /qureupdate
 
 echo "monitor Deployment started"
 
