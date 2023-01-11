@@ -55,7 +55,7 @@ for i in range(len(newpath)):
     tag_dict_new,valuesInNew= updateNewFile(tag_dict_new,tag_dict_old,valuesInNew)
     print("new env will look like this\n\n")
     show_env(tag_dict_new)
-    print('\n\nthese tags are transfered from', oldpath[i] ,'to', newpath,'\n',*valuesToBeReplaced)
+    print('\n\nthese tags are transfered from', oldpath[i] ,'to', newpath[i]]'\n',*valuesToBeReplaced)
     print('these are new',valuesInNew)
     change=input("do you want to make any changes y/n\n")
     tagName=''
