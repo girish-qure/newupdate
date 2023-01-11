@@ -3,8 +3,7 @@ set -e
 # for latest docker compose
 #export PATH=/home/qureai_support/bin:/home/qureai_support/.local/bin:$PATH
 
-#cd /home/qureai_support/deployment
-
+cd /lol
 echo "Deployment started"
 
 #sudo aws ecr get-login --no-include-email --region=ap-south-1 | /bin/bash
@@ -17,6 +16,8 @@ docker volume create --name=apihub-data | true
 docker volume create --name=apihub-notebooks | true
 docker volume create --name=psql-data | true
 docker volume create --name=dcmio-data | true
+docker volume create --name=dcmio-notebooks | true
+
 
 
 echo "deploying dockers"
