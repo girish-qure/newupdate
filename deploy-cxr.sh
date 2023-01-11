@@ -18,32 +18,19 @@ docker volume create --name=apihub-notebooks | true
 docker volume create --name=psql-data | true
 docker volume create --name=dcmio-data | true
 
-echo $1
-echo $2
-echo $3
-echo $4
 
-if [[ "$4" == "pull-only" ]]; then
-    echo "only pulling dockers"
-    APIHUB_TAG=$1 docker-compose -p apihub -f apihub/docker-compose.yml pull
-    CXRAPI_TAG=$2 CHECKPOINTS_TAG=$3 docker-compose -p cxr -f cxr/cxr.yml pull
-    CXRAPI_TAG=$2 CHECKPOINTS_TAG=$3 docker-compose -p cxr -f cxr/workers.yml pull
+echo "deploying dockers"
+docker-compose -p apihub -f apihub/apihub.yml pull
+docker-compose -p cxr -f cxr/cxr.yml pull
+docker-compose -p cxr -f cxr/workers.yml pull
 
-else
-    echo "deploying dockers"
-    APIHUB_TAG=$1 docker-compose -p apihub -f apihub/docker-compose.yml pull
-    CXRAPI_TAG=$2 CHECKPOINTS_TAG=$3 docker-compose -p cxr -f cxr/cxr.yml pull
-    CXRAPI_TAG=$2 CHECKPOINTS_TAG=$3 docker-compose -p cxr -f cxr/workers.yml pull
+docker-compose -p apihub -f apihub/apihub.yml down --remove-orphans | true
+docker-compose -p apihub -f apihub/apihub.yml up -d
 
-    APIHUB_TAG=$1 docker-compose -p apihub -f apihub/docker-compose.yml down --remove-orphans | true
-    APIHUB_TAG=$1 docker-compose -p apihub -f apihub/docker-compose.yml up -d
+docker-compose -p cxr -f cxr/cxr.yml down --remove-orphans | true
+docker-compose -p cxr -f cxr/cxr.yml up -d
 
-    CXRAPI_TAG=$2 CHECKPOINTS_TAG=$3 docker-compose -p cxr -f cxr/cxr.yml down --remove-orphans | true
-    CXRAPI_TAG=$2 CHECKPOINTS_TAG=$3 docker-compose -p cxr -f cxr/cxr.yml up -d
-
-    CXRAPI_TAG=$2 CHECKPOINTS_TAG=$3 docker-compose -p workers -f cxr/workers.yml down --remove-orphans | true
-    CXRAPI_TAG=$2 CHECKPOINTS_TAG=$3 docker-compose -p workers -f cxr/workers.yml up -d
-fi
-
+docker-compose -p workers -f cxr/workers.yml down --remove-orphans | true
+docker-compose -p workers -f cxr/workers.yml up -d
 
 echo "Deployment complete"
