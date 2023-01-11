@@ -34,3 +34,4 @@ for i in range(len(oldpath)):
     with open(newpath[i], 'w') as f:
         yaml.dump(newData, f)
     print("completed", newpath[i])
+    
