@@ -46,7 +46,7 @@ oldpath=[apienv,cxrenv]
 #oldpath=['/home/qure/qure/apihub/apihub.env','/home/qure/qure/apihub/psql.env','/home/qure/qure/cxr/cxr.env']
 #oldpath=['/qure/workspace/QxrQbox/apihub/apihub.env','/qure/workspace/QxrQbox/apihub/psql.env','/qure/workspace/QxrQbox/cxr/cxr.env']
 #newpath=['/qureupdate/newupdate/apihub/apihub.env','/qureupdate/newupdate/apihub/psql.env','/qureupdate/newupdate/cxr/cxr.env']
-ewpath=['/qureupdate/apihub/apihub.env','/qureupdate/cxr/cxr.env']
+newpath=['/qureupdate/apihub/apihub.env','/qureupdate/cxr/cxr.env']
 # newpath=['/qureupdate/apihub/apihub.env','/qureupdate/apihub/psql.env','/qureupdate/cxr/cxr.env']
 for i in range(len(newpath)):
     tag_dict_old=read_file(oldpath[i])
