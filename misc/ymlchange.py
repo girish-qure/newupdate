@@ -18,7 +18,7 @@ for i in range(len(oldpath)):
     print(newData['volumes'])
     if 'psql-data' in newData['volumes']:
         newData['volumes'].pop('psql-data')
-        newData['volumes']['psq-data1']={'external': True}
+        newData['volumes']['psql-data1']={'external': True}
     if 'apihub_sync' not in oldData['services'].keys():
         try:
             newData['services'].pop('apihub_sync')
