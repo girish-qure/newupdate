@@ -41,11 +41,13 @@ def updateNewFile(tag_dict_new,tag_dict_old,valuesInNew):
             valuesInNew.append(tag_name)
     tag_dict_new=updateSomeFixedValues(tag_dict_new)
     return tag_dict_new,valuesInNew
-oldpath=[apienv,psqlenv,cxrenv]
+oldpath=[apienv,cxrenv]
+#oldpath=[apienv,psqlenv,cxrenv]
 #oldpath=['/home/qure/qure/apihub/apihub.env','/home/qure/qure/apihub/psql.env','/home/qure/qure/cxr/cxr.env']
 #oldpath=['/qure/workspace/QxrQbox/apihub/apihub.env','/qure/workspace/QxrQbox/apihub/psql.env','/qure/workspace/QxrQbox/cxr/cxr.env']
 #newpath=['/qureupdate/newupdate/apihub/apihub.env','/qureupdate/newupdate/apihub/psql.env','/qureupdate/newupdate/cxr/cxr.env']
-newpath=['/qureupdate/apihub/apihub.env','/qureupdate/apihub/psql.env','/qureupdate/cxr/cxr.env']
+ewpath=['/qureupdate/apihub/apihub.env','/qureupdate/cxr/cxr.env']
+# newpath=['/qureupdate/apihub/apihub.env','/qureupdate/apihub/psql.env','/qureupdate/cxr/cxr.env']
 for i in range(len(newpath)):
     tag_dict_old=read_file(oldpath[i])
     tag_dict_new=read_file(newpath[i])

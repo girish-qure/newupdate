@@ -15,6 +15,8 @@ for i in range(len(oldpath)):
 
 # update the volumes in the first file with those from the second file
     newData['volumes'] = oldData['volumes']
+    newData['volumes'].pop('psql-data')
+    newData['volumes']['psq-data1']={'external': True}
     if 'apihub_sync' not in oldData['services'].keys():
         try:
             newData['services'].pop('apihub_sync')
@@ -28,8 +30,11 @@ for i in range(len(oldpath)):
     for service_name, service_data in oldData['services'].items():
         try:
             newData['services'][service_name]['volumes'] = oldData['services'][service_name]['volumes']
+            if service_name=='postgres':
+                newData['services']['postgres']['volumes']=['psql-data1:/var/lib/postgresql/data']
         except:
             pass
+        
 # write the updated data to a new file
     with open(newpath[i], 'w') as f:
         yaml.dump(newData, f)
