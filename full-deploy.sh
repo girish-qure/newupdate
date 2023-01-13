@@ -24,12 +24,28 @@ echo "Deployment complete"
 echo "restoring database"
 
 cd /qureupdate/misc
-bash pg_restore.sh
+
+bash pgrestore.sh
 
 echo "restoring database complete"
 
 
 echo "running migration complete"
+
+docker cp apihubmigrate.sh  apihub:/srv/apihub/authentication/
+docker exec apihub bash /srv/apihub/authentication/apihubmigrate.sh
+
+echo "cxr migration complete"
+
+
+
+
+docker cp cxrmigrate.sh  cxr_api:/srv/cxr_api/cxr_api/
+docker exec cxr_api bash /srv/cxr_api/cxr_api/cxrmigrate.sh
+
+echo "cxr migration complete"
+
+
 
 echo "migration complete"
 
