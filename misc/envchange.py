@@ -35,6 +35,8 @@ def updateSomeFixedValues(dictValues):
         tag_dict_new['CXR_API_DATABASE_NAME']="cxr_api"
     if "AUTH_DATABASE_PASSWORD" in dictValues.keys():
         tag_dict_new['AUTH_DATABASE_PASSWORD']="4a5Lry5LYGRj"
+    if "QDB_PASSWORD" in dictValues.keys():
+        tag_dict_new['QDB_PASSWORD']="4a5Lry5LYGRj"
     return tag_dict_new
 
 def updateNewFile(tag_dict_new,tag_dict_old,valuesInNew):
