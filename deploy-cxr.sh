@@ -18,6 +18,8 @@ docker volume create --name=psql-data | true
 docker volume create --name=psql-data1 | true
 docker volume create --name=dcmio-data | true
 docker volume create --name=dcmio-notebooks | true
+docker volume create --name=prometheus-data | true
+docker volume create --name=alertmanager-data | true
 
 
 
