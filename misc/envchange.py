@@ -29,6 +29,12 @@ def updateSomeFixedValues(dictValues):
         tag_dict_new['SERVER_ENDPOINT']='http://0.0.0.0:2000/'
     if 'FS_SERVER_PATH' in dictValues.keys():
         tag_dict_new['FS_SERVER_PATH']='http://172.17.0.1:2000/static/'
+    if "CXR_API_DATABASE_PASSWORD" in dictValues.keys():
+        tag_dict_new['CXR_API_DATABASE_PASSWORD']="4a5Lry5LYGRj"
+    if "CXR_API_DATABASE_NAME" in dictValues.keys():
+        tag_dict_new['CXR_API_DATABASE_NAME']="cxr_api"
+    if "AUTH_DATABASE_PASSWORD" in dictValues.keys():
+        tag_dict_new['AUTH_DATABASE_PASSWORD']="4a5Lry5LYGRj"
     return tag_dict_new
 
 def updateNewFile(tag_dict_new,tag_dict_old,valuesInNew):
