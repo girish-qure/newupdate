@@ -35,7 +35,7 @@ echo "running migration complete"
 docker cp apihubmigrate.sh  apihub:/srv/apihub/authentication/
 docker exec apihub bash /srv/apihub/authentication/apihubmigrate.sh
 
-echo "cxr migration complete"
+echo "apihub migration complete"
 
 
 
@@ -45,7 +45,18 @@ docker exec cxr_api bash /srv/cxr_api/cxr_api/cxrmigrate.sh
 
 echo "cxr migration complete"
 
+echo "apihub commit"
 
+cd /qureupdate/apihub
+
+set -a
+source .env
+
+echo $APIHUB_TAG
+
+sudo docker commit apihub qureai/apihub:$APIHUB_TAG
+
+echo "apihub commit done"
 
 echo "migration complete"
 
