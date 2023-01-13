@@ -15,6 +15,7 @@ for i in range(len(oldpath)):
 
 # update the volumes in the first file with those from the second file
     newData['volumes'] = oldData['volumes']
+    print(newData['volumes'])
     newData['volumes'].pop('psql-data')
     newData['volumes']['psq-data1']={'external': True}
     if 'apihub_sync' not in oldData['services'].keys():

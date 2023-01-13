@@ -15,6 +15,7 @@ docker volume create --name=qxr-notebooks | true
 docker volume create --name=apihub-data | true
 docker volume create --name=apihub-notebooks | true
 docker volume create --name=psql-data | true
+docker volume create --name=psql-data1 | true
 docker volume create --name=dcmio-data | true
 docker volume create --name=dcmio-notebooks | true
 
