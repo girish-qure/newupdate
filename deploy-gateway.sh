@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+#set -e
 #export PATH=/home/qureai_support/bin:/home/qureai_support/.local/bin:$PATH
 
 cd /qureupdate
