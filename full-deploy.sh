@@ -20,3 +20,17 @@ bash deploy-gateway.sh
 bash deploy-monitoring.sh
 
 echo "Deployment complete"
+
+echo "restoring database"
+
+cd /qureupdate/misc
+bash pg_restore.sh
+
+echo "restoring database complete"
+
+
+echo "running migration complete"
+
+echo "migration complete"
+
+docker logout
