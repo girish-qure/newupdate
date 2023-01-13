@@ -35,7 +35,7 @@ services:
     depends_on:
       - dcmio_web_server
     volumes:
-      - dcmio_data:/dcmio/data
+      - dcmio-data:/dcmio/data
       - ./conf.json:/srv/dcmio/conf.json
     env_file: "./dcmio.env"
 
