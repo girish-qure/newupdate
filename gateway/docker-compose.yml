@@ -41,7 +41,7 @@ services:
 
 
 volumes:
-  dcmio_data:
+  dcmio-data:
     external: true
   dcmio-notebooks:
     external: true
