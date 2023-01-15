@@ -7,10 +7,10 @@
 mkdir /qureupdate 
 git clone https://github.com/girish-qure/newupdate.git /qureupdate
 ```
-- enter file path of envs and yml’s
+- enter file path of envs and yml’s in **`/qureupdate/misc/var.py`**
 ```
     cd  /qureupdate/misc
-    enter in this dir and make changes in _**var.py**_  *file*
+    enter in this dir and make changes in var.py file
     enter these variable values(you have add these according to current deployment)
 
         apienv='/home/qure/qure/apihub/apihub.env'
@@ -20,7 +20,7 @@ git clone https://github.com/girish-qure/newupdate.git /qureupdate
         cxryml='/home/qure/qure/cxr/cxr.yml'
         workeryml='/home/qure/qure/cxr/workers.yml'
 ```
-- now final step run full-deploy.sh file(make sure you are as sudo)
+- now final step run **`full-deploy.sh`** file(make sure you are as sudo)
 ```
 cd  /qureupdate
 ./full-deploy.sh
@@ -28,7 +28,7 @@ cd  /qureupdate
 - if you followed above steps properly upgradation should be sucessfull without any issue
 
 
-- what “full-deploy.sh” will do
+- what `full-deploy.sh` will do
 ```
     docker login
     take postgres backup of previous version
@@ -40,4 +40,12 @@ cd  /qureupdate
     run migrations in cxr
     commit apihub
     docker logout
+```
+
+- work for future
+```
+    -make versions managable
+    -maybe a UI
+    -ignore postgress backup and upgrade if already on latest version
+    -etc
 ```
