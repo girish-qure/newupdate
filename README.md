@@ -45,6 +45,7 @@ cd  /qureupdate
 - work for future
 ```
     -make versions managable
+    -logs additions
     -maybe a UI
     -ignore postgress backup and upgrade if already on latest version
     -etc
