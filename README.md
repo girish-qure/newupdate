@@ -22,13 +22,13 @@ git clone https://github.com/girish-qure/newupdate.git /qureupdate
 ```
 - now final step run full-deploy.sh file(make sure you are as sudo)
 ```
-    cd  /qureupdate
-    ./full-deploy.sh
+cd  /qureupdate
+./full-deploy.sh
 ```
 - if you followed above steps properly upgradation should be sucessfull without any issue
 
 
--what “full-deploy.sh” will do
+- what “full-deploy.sh” will do
 ```
     docker login
     take postgres backup of previous version
