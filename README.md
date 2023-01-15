@@ -10,7 +10,7 @@ git clone https://github.com/girish-qure/newupdate.git /qureupdate
 - enter file path of envs and yml’s
 ```
     cd  /qureupdate/misc
-    enter in this dir and make changes in **var.py**  *file*
+    enter in this dir and make changes in _**var.py**_  *file*
     enter these variable values(you have add these according to current deployment)
 
         apienv='/home/qure/qure/apihub/apihub.env'
