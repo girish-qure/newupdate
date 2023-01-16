@@ -30,23 +30,23 @@ cd  /qureupdate
 
 - what `full-deploy.sh` will do
 ```
-    docker login
-    take postgres backup of previous version
-    make changes in env files, copy previous env variable in new envs
-    make changes in yml, change volume names as previous one, make new one for postgress
-    deploy dockers, apihub, cxr dcmio and monitoring stuff
-    restore postgres backup in new version
-    run migration in api hub and will take care of cors header
-    run migrations in cxr
-    commit apihub
-    docker logout
+    - docker login
+    - take postgres backup of previous version
+    - make changes in env files, copy previous env variable in new envs
+    - make changes in yml, change volume names as previous one, make new one for postgress
+    - deploy dockers, apihub, cxr dcmio and monitoring stuff
+    - restore postgres backup in new version
+    - run migration in api hub and will take care of cors header
+    - run migrations in cxr
+    - commit apihub
+    - docker logout
 ```
 
 - work for future
 ```
-    -make versions managable
-    -logs additions
-    -maybe a UI
-    -ignore postgress backup and upgrade if already on latest version
-    -etc
+    - make versions managable
+    - logs additions
+    - maybe a UI
+    - ignore postgress backup and upgrade if already on latest version
+    - etc
 ```
