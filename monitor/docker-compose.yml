@@ -8,7 +8,7 @@ volumes:
 
 services:
   prometheus:
-    image: qureai/prometheus:v2.36.1
+    image: prom/prometheus:v2.36.1
     container_name: prometheus
     volumes:
       # Move prometheus.yml in this directory to /etc/prometheus/
@@ -34,7 +34,7 @@ services:
       - alertmanager-data:/data
 
   node_exporter:
-    image: qureai/node-exporter:v1.3.1
+    image: quay.io/prometheus/node-exporter:v1.3.1
     container_name: node_exporter
     command:
       - '--path.rootfs=/host'
