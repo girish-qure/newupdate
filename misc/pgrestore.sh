@@ -11,9 +11,8 @@ echo $POSTGRES_PASSWORD
 cd /qureupdate/misc/
 
 
+docker exec -it psql psql -U postgres -c "CREATE DATABASE apihub;"
 docker exec -it psql psql -U postgres -c "CREATE DATABASE cxr_api;"
-docker exec -it psql psql -U postgres -c "CREATE DATABASE cxr_api;"
-
 
 
 
