@@ -54,7 +54,7 @@ source .env
 
 echo $APIHUB_TAG
 
-sudo docker commit apihub qureai/apihub:$APIHUB_TAG
+docker commit apihub qureai/apihub:$APIHUB_TAG
 
 echo "apihub commit done"
 
