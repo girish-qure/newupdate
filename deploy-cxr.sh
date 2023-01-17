@@ -24,9 +24,7 @@ docker volume create --name=alertmanager-data | true
 
 
 echo "deploying dockers"
-docker-compose -p apihub -f apihub/apihub.yml pull
-docker-compose -p cxr -f cxr/cxr.yml pull
-docker-compose -p cxr -f cxr/workers.yml pull
+
 
 docker-compose -p apihub -f apihub/apihub.yml down --remove-orphans | true
 docker-compose -p apihub -f apihub/apihub.yml up -d
