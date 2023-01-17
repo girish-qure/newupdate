@@ -1,7 +1,7 @@
 version: '2'
 services:
   workers1:
-    image: 011855203472.dkr.ecr.ap-south-1.amazonaws.com/cxr_api:${CXRAPI_TAG}
+    image: qureai/cxr_api:${CXRAPI_TAG}
     container_name: worker1
     command: bash -c "source activate cxr && python manage.py startworker"
     restart: unless-stopped
@@ -12,7 +12,7 @@ services:
     env_file: cxr.env
 
   workers2:
-    image: 011855203472.dkr.ecr.ap-south-1.amazonaws.com/cxr_api:${CXRAPI_TAG}
+    image: qureai/cxr_api:${CXRAPI_TAG}
     container_name: worker2
     command: bash -c "source activate cxr && python manage.py startworker"
     restart: unless-stopped
@@ -23,7 +23,7 @@ services:
     env_file: cxr.env
 
   workers3:
-    image: 011855203472.dkr.ecr.ap-south-1.amazonaws.com/cxr_api:${CXRAPI_TAG}
+    image: qureai/cxr_api:${CXRAPI_TAG}
     container_name: worker3
     command: bash -c "source activate cxr && python manage.py startworker"
     restart: unless-stopped
@@ -34,7 +34,7 @@ services:
     env_file: cxr.env
 
   workers4:
-    image: 011855203472.dkr.ecr.ap-south-1.amazonaws.com/cxr_api:${CXRAPI_TAG}
+    image: qureai/cxr_api:${CXRAPI_TAG}
     container_name: worker4
     command: bash -c "source activate cxr && python manage.py startworker"
     restart: unless-stopped
@@ -45,7 +45,7 @@ services:
     env_file: cxr.env
 
   workers5:
-    image: 011855203472.dkr.ecr.ap-south-1.amazonaws.com/cxr_api:${CXRAPI_TAG}
+    image: qureai/cxr_api:${CXRAPI_TAG}
     container_name: worker5
     command: bash -c "source activate cxr && python manage.py startworker"
     restart: unless-stopped
