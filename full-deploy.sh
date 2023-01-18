@@ -4,7 +4,7 @@ cd /qureupdate/misc
 
 bash psqlupgrade.sh
 
-aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 011855203472.dkr.ecr.ap-south-1.amazonaws.com
+#aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 011855203472.dkr.ecr.ap-south-1.amazonaws.com
 docker login -u ajayrajqure -p zpsbS8BR2Q
 echo "taking backups of cxr and apihub"
 
