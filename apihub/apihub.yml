@@ -44,7 +44,7 @@ services:
     env_file: psql.env
 
   frontend:
-    image: 011855203472.dkr.ecr.ap-south-1.amazonaws.com/qtrack_web.frontend:${QTRACK_FRONTEND_TAG}
+    image: qureai/qtrack_web.frontend:${QTRACK_FRONTEND_TAG}
     container_name: frontend
     restart: unless-stopped
     ports:
@@ -53,7 +53,7 @@ services:
     env_file: apihub.env
   
   checkpoints:
-    image: 011855203472.dkr.ecr.ap-south-1.amazonaws.com/qxr_checkpoints:${CHECKPOINTS_TAG}
+    image: qureai/qxr_checkpoints:${CHECKPOINTS_TAG}
     container_name: checkpoints
     command: sh -c "cp -Ru /cxr_checkpoints/ /final/ && tail -f /dev/null"
     restart: unless-stopped

@@ -8,7 +8,7 @@ volumes:
 
 services:
   prometheus:
-    image: 011855203472.dkr.ecr.ap-south-1.amazonaws.com/prometheus:v2.36.1
+    image: prom/prometheus:v2.36.1
     container_name: prometheus
     volumes:
       # Move prometheus.yml in this directory to /etc/prometheus/
@@ -22,7 +22,7 @@ services:
       - "--log.level=debug"
 
   alert_manager:
-    image: 011855203472.dkr.ecr.ap-south-1.amazonaws.com/alertmanager:1.0.0
+    image: qureai/alertmanager:1.0.0
     container_name: alertmanager
     restart: unless-stopped
     env_file:
@@ -34,7 +34,7 @@ services:
       - alertmanager-data:/data
 
   node_exporter:
-    image: 011855203472.dkr.ecr.ap-south-1.amazonaws.com/node-exporter:v1.3.1
+    image: quay.io/prometheus/node-exporter:v1.3.1
     container_name: node_exporter
     command:
       - '--path.rootfs=/host'
@@ -51,7 +51,7 @@ services:
       - '/:/host:ro,rslave'
 
   onpremstats:
-    image: 011855203472.dkr.ecr.ap-south-1.amazonaws.com/onpremstats:1.0.4
+    image: qureai/onpremstats:1.0.4
     container_name: onpremstats
     restart: unless-stopped
     command: ["/usr/local/bin/python", "/qure/py_cron.py"]
