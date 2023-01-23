@@ -73,4 +73,6 @@ echo "apihub commit done"
 echo "migration complete"
 
 docker logout
+cd /qureupdate
+
 python3 notification.py "installation completed"
