@@ -10,4 +10,4 @@ client = WebClient(token=new)
 message=sys.argv[1]
 
 
-client.chat_postMessage(channel='#testing111',text=message)
+client.chat_postMessage(channel='#qbox-upgradation-status',text=message)
