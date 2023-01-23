@@ -20,9 +20,14 @@ cd /qureupdate
 python3 notification.py "upgradation started, pulling dockers"
 echo "pulling all docker images"
 
-bash pull-image.sh
+bash pull-image.sh 
 
-python3 notification.py "pulling dockers completed"
+if bash pull-image.sh;then
+    python3 notification.py "pulling dockers completed"
+else 
+    python3 notification.py "docker pull failed and stopped" && exit
+fi
+
 echo "removing previous dockers"
 
 docker ps -a | awk '{print $1}' | while read in; do docker rm -f $in; done
