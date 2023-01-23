@@ -2,7 +2,7 @@ import os, sys
 from slack_sdk import WebClient
 
 
-slack_token = 'xoxb-20081664100-4114756072293-g7Q9F693LPr2ubhOBqeRLLkO'
+slack_token = 'xoxb-20081664100-4681483384818-MHFfFCpBC85LnAjgR56upoVJ'
 
 
 
