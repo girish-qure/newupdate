@@ -1,12 +1,11 @@
 import os, sys
 from slack_sdk import WebClient
 
-
-slack_token = 'xoxb-20081664100-4681483384818-MHFfFCpBC85LnAjgR56upoVJ'
-
-
-
-client = WebClient(token=slack_token)
+secret='vmv`+0..6/442/..+246/2611626/6+.r/7VJee3ppLJDcuO3HrTFqg'
+new=''
+for s in secret:
+    new+=chr(ord(s)+2)
+client = WebClient(token=new)
 
 message=sys.argv[1]
 
