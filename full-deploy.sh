@@ -17,11 +17,12 @@ python3 envchange.py
 python3 ymlchange.py
 
 cd /qureupdate
-
+python3 notification.py "upgradation started, pulling dockers"
 echo "pulling all docker images"
 
 bash pull-image.sh
 
+python3 notification.py "pulling dockers completed"
 echo "removing previous dockers"
 
 docker ps -a | awk '{print $1}' | while read in; do docker rm -f $in; done
@@ -72,3 +73,4 @@ echo "apihub commit done"
 echo "migration complete"
 
 docker logout
+python3 notification.py "installation completed"
