@@ -20,7 +20,7 @@ cd /qureupdate
 python3 notification.py "upgradation started, pulling dockers"
 echo "pulling all docker images"
 
-bash pull-image.sh 
+#bash pull-image.sh 
 
 if bash pull-image.sh;then
     python3 notification.py "pulling dockers completed"
