@@ -25,7 +25,7 @@ echo "pulling all docker images"
 if bash pull-image.sh;then
     python3 notification.py "pulling dockers completed"
 else 
-    python3 notification.py "docker pull failed and stopped" && exit
+    exit && python3 notification.py "docker pull failed and stopped" 
 fi
 
 echo "removing previous dockers"
