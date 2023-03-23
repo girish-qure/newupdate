@@ -63,34 +63,34 @@ for i in range(len(newpath)):
     valuesInOld=[]
     valuesInNew=[]
     tag_dict_new,valuesInNew= updateNewFile(tag_dict_new,tag_dict_old,valuesInNew)
-    print("new env will look like this\n\n")
-    show_env(tag_dict_new)
-    print('\n\nthese tags are transfered from', oldpath[i] ,'to', newpath[i],'\n',*valuesToBeReplaced)
-    print('these are new',valuesInNew)
-    change=input("do you want to make any changes y/n\n")
-    tagName=''
-    more=''
-    while change=='y'and tagName!='exit' and more!='n':
-        while True:
-            tagName=input('enter the tag which you want to change or `exit` if you dont want to change anything')
-            print(tagName=='exit')
-            if tagName=='exit':
-                break
-            elif tagName in tag_dict_new.keys():
-                tagValue=input("enter tag value ")
-                tag_dict_new[tagName]=tagValue
-                more=input("do you want to make more changes y/n ")
-                if more=='y':
-                    continue
-                elif more=='n':
-                    break
-                print('something diff selected, pelase select correct option')
-                continue
-            print('wrong tag given')
-            continue
-    else:
-        change=input("asking 1 more time, you want to make any changes y/n\n")
-    print("final env will look like this\n\n")
+    # print("new env will look like this\n\n")
+    # show_env(tag_dict_new)
+    # print('\n\nthese tags are transfered from', oldpath[i] ,'to', newpath[i],'\n',*valuesToBeReplaced)
+    # print('these are new',valuesInNew)
+    # change=input("do you want to make any changes y/n\n")
+    # tagName=''
+    # more=''
+    # while change=='y'and tagName!='exit' and more!='n':
+    #     while True:
+    #         tagName=input('enter the tag which you want to change or `exit` if you dont want to change anything')
+    #         print(tagName=='exit')
+    #         if tagName=='exit':
+    #             break
+    #         elif tagName in tag_dict_new.keys():
+    #             tagValue=input("enter tag value ")
+    #             tag_dict_new[tagName]=tagValue
+    #             more=input("do you want to make more changes y/n ")
+    #             if more=='y':
+    #                 continue
+    #             elif more=='n':
+    #                 break
+    #             print('something diff selected, pelase select correct option')
+    #             continue
+    #         print('wrong tag given')
+    #         continue
+    # else:
+    #     change=input("asking 1 more time, you want to make any changes y/n\n")
+    # print("final env will look like this\n\n")
     show_env(tag_dict_new)
     file_update(newpath[i], tag_dict_new)
     print("changed", newpath[i])
