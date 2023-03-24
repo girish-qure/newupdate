@@ -21,6 +21,7 @@ def selectCxrPath():
 
 def path():
     print('hello')
+    button1.config(state=DISABLED)
     apihub = api_path.get("1.0", "end")
     cxr = cxr_path.get("1.0", "end")
     tkt = ticketno.get("1.0", "end")
@@ -71,8 +72,8 @@ master = Tk()
 radio = IntVar()
 master.configure()
 master.geometry("600x600")
-master.title("Updater")
-headlabel = Label(master, text='UPDATER', fg='black')
+master.title("qUpdater")
+#headlabel = Label(master, text='UPDATER', fg='black')
 label = Label(master)
 label4 = Label(master)
 label5 = Label(master)
@@ -85,7 +86,7 @@ label3 = Label(master, text="mode of installation", fg='black')
 ticket = Label(master, text="ticket number", fg='black')
 
 
-headlabel.grid(row=0, column=1)
+#headlabel.grid(row=0, column=1)
 
 # padx keyword argument used to set padding along x-axis .
 label1.grid(row=1, column=0, padx=10)
