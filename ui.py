@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import filedialog
 import os
 import fileinput
+import subprocess
 
 
 def selectApiPath():
@@ -24,7 +25,8 @@ def path():
     cxr = cxr_path.get("1.0", "end")
     replacepath(apihub, cxr)
     label4.config(text="variables replaced")
-    os.system("./full-deploy.sh")
+    subprocess.run(['python3', 'deploy.py'])
+    #os.system("./full-deploy.sh")
     label5.config(text="started deployment")
 
 
