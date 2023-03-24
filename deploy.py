@@ -61,11 +61,17 @@ subprocess.run(['docker', 'exec', 'cxr_api', 'bash',
 # Commit APIHUB Docker image
 print("apihub commit")
 os.chdir('/qureupdate/apihub')
-env = os.environ.copy()
-env['APIHUB_TAG'] = subprocess.run(
-    ['echo', '$APIHUB_TAG'], stdout=subprocess.PIPE, env=env).stdout.decode().strip()
-subprocess.run(['docker', 'commit', 'apihub',
-               f"qureai/apihub:{env['APIHUB_TAG']}"])
+
+os.system("set -a")
+os.system("source .env")
+os.system("echo $APIHUB_TAG")
+
+os.system("docker commit apihub qureai/apihub:$APIHUB_TAG")
+# env = os.environ.copy()
+# env['APIHUB_TAG'] = subprocess.run(
+#     ['echo', '$APIHUB_TAG'], stdout=subprocess.PIPE, env=env).stdout.decode().strip()
+# subprocess.run(['docker', 'commit', 'apihub',
+#                f"qureai/apihub:{env['APIHUB_TAG']}"])
 
 # Logout from Docker registry
 subprocess.run(['docker', 'logout'])
