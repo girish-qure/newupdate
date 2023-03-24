@@ -24,7 +24,7 @@ def path():
     apihub = api_path.get("1.0", "end")
     cxr = cxr_path.get("1.0", "end")
     tkt = ticketno.get("1.0", "end")
-    subprocess.run(['python3', 'notification.py', 'upgradation starting for'+tkt])
+    subprocess.run(['python3', 'notification.py', 'upgradation starting for ticker number : '+tkt])
     replacepath(apihub, cxr)
     label4.config(text="variables replaced")
     subprocess.run(['python3', 'deploy.py'])
