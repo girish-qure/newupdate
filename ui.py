@@ -23,6 +23,8 @@ def path():
     print('hello')
     apihub = api_path.get("1.0", "end")
     cxr = cxr_path.get("1.0", "end")
+    tkt = ticketno.get("1.0", "end")
+    subprocess.run(['python3', 'notification.py', 'upgradation starting for'+tkt])
     replacepath(apihub, cxr)
     label4.config(text="variables replaced")
     subprocess.run(['python3', 'deploy.py'])
@@ -80,6 +82,7 @@ label6 = Label(master)
 label1 = Label(master, text=" apihub path ", fg='black')
 label2 = Label(master, text="cxr path", fg='black')
 label3 = Label(master, text="mode of installation", fg='black')
+ticket = Label(master, text="ticket number", fg='black')
 
 
 headlabel.grid(row=0, column=1)
@@ -88,15 +91,18 @@ headlabel.grid(row=0, column=1)
 label1.grid(row=1, column=0, padx=10)
 label2.grid(row=3, column=0, padx=10)
 label3.grid(row=5, column=0, padx=10)
+ticket.grid(row=4, column=0, padx=10)
 
 api_path = Text(master, height=1, width=25, font="lucida 13")
 cxr_path = Text(master, height=1, width=25, font="lucida 13")
+ticketno = Text(master, height=1, width=25, font="lucida 13")
 
 
 # padx keyword argument used to set padding along x-axis .
 # pady keyword argument used to set padding along y-axis .
 api_path.grid(row=1, column=1, padx=10, pady=10)
 cxr_path.grid(row=3, column=1, padx=10, pady=10)
+ticketno.grid(row=4, column=1, padx=10, pady=10)
 
 online = Radiobutton(master, text="online", variable=radio,
                      value=1, command=selection)

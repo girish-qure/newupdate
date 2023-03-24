@@ -23,7 +23,7 @@ subprocess.run(['bash', 'pgbackup.sh'])
 
 # Change YAML and ENV files
 print("changing yml and env files")
-os.chdir('/qureupdate')
+os.chdir('/qureupdate/misc')
 subprocess.run(['python3', 'envchange.py'])
 subprocess.run(['python3', 'ymlchange.py'])
 
@@ -34,6 +34,7 @@ for container_id in ps_output.stdout.decode().split('\n')[1:-1]:
     subprocess.run(['docker', 'rm', '-f', container_id.split()[0]])
 
 # Deploy Docker containers
+os.chdir('/qureupdate')
 print("deploying containers")
 subprocess.run(['bash', 'deploy-cxr.sh'])
 subprocess.run(['bash', 'deploy-gateway.sh'])
