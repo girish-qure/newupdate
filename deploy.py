@@ -46,7 +46,7 @@ os.chdir('/qureupdate/misc')
 subprocess.run(['bash', 'pgrestore.sh'])
 
 os.chdir('/qureupdate')
-subprocess.run(['bash', 'migration-commit.sh'])
+subprocess.run(['bash', 'migrations-commit.sh'])
 
 subprocess.run(['docker', 'logout'])
 
