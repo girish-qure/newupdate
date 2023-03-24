@@ -44,29 +44,30 @@ subprocess.run(['bash', 'deploy-monitoring.sh'])
 print("restoring database")
 os.chdir('/qureupdate/misc')
 subprocess.run(['bash', 'pgrestore.sh'])
+subprocess.run(['bash', 'migration-commit.sh'])
 
-# Run APIHUB migration script
-print("running migration complete")
-subprocess.run(['docker', 'cp', 'apihubmigrate.sh',
-               'apihub:/srv/apihub/authentication/'])
-subprocess.run(['docker', 'exec', 'apihub', 'bash',
-               '/srv/apihub/authentication/apihubmigrate.sh'])
+# # Run APIHUB migration script
+# print("running migration complete")
+# subprocess.run(['docker', 'cp', 'apihubmigrate.sh',
+#                'apihub:/srv/apihub/authentication/'])
+# subprocess.run(['docker', 'exec', 'apihub', 'bash',
+#                '/srv/apihub/authentication/apihubmigrate.sh'])
 
-# Run CXR migration script
-subprocess.run(['docker', 'cp', 'cxrmigrate.sh',
-               'cxr_api:/srv/cxr_api/cxr_api/'])
-subprocess.run(['docker', 'exec', 'cxr_api', 'bash',
-               '/srv/cxr_api/cxr_api/cxrmigrate.sh'])
+# # Run CXR migration script
+# subprocess.run(['docker', 'cp', 'cxrmigrate.sh',
+#                'cxr_api:/srv/cxr_api/cxr_api/'])
+# subprocess.run(['docker', 'exec', 'cxr_api', 'bash',
+#                '/srv/cxr_api/cxr_api/cxrmigrate.sh'])
 
-# Commit APIHUB Docker image
-print("apihub commit")
-os.chdir('/qureupdate/apihub')
+# # Commit APIHUB Docker image
+# print("apihub commit")
+# os.chdir('/qureupdate/apihub')
 
-os.system("set -a")
-os.system("source .env")
-os.system("echo $APIHUB_TAG")
+# os.system("set -a")
+# os.system("source .env")
+# os.system("echo $APIHUB_TAG")
 
-os.system("docker commit apihub qureai/apihub:$APIHUB_TAG")
+# os.system("docker commit apihub qureai/apihub:$APIHUB_TAG")
 # env = os.environ.copy()
 # env['APIHUB_TAG'] = subprocess.run(
 #     ['echo', '$APIHUB_TAG'], stdout=subprocess.PIPE, env=env).stdout.decode().strip()
