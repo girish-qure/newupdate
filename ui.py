@@ -28,9 +28,10 @@ def path():
     subprocess.run(['python3', 'notification.py', 'upgradation starting for ticker number : '+tkt])
     replacepath(apihub, cxr)
     label4.config(text="variables replaced")
+    label5.config(text="started deployment")
     subprocess.run(['python3', 'deploy.py'])
     #os.system("./full-deploy.sh")
-    label5.config(text="started deployment")
+    label6.config(text="completed deployment")
 
 
 def replacepath(apihub, cxr):
