@@ -10,6 +10,8 @@ services:
   prometheus:
     image: prom/prometheus:v2.36.1
     container_name: prometheus
+    ports:
+      - "9090:9090"
     volumes:
       # Move prometheus.yml in this directory to /etc/prometheus/
       # This is needed since its standardized and you can change the config
